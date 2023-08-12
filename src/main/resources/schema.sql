@@ -1,0 +1,41 @@
+--- Create TaskType Table ---
+DROP TABLE IF EXISTS TaskType;
+CREATE TABLE TaskType (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  TaskType VARCHAR(20) NOT NULL,
+  Text VARCHAR(50) NOT NULL
+);
+
+--- Create Pokedex Table ---
+DROP TABLE IF EXISTS Pokedex;
+CREATE TABLE Pokedex (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  HisuiDexNo INT NOT NULL,
+  Name VARCHAR(20) NOT NULL
+);
+
+--- Create Task Table ---
+DROP TABLE IF EXISTS Task;
+Create Table Task (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  PokemonID INT NOT NULL,
+  Points INT NOT NULL,
+  TaskOrder INT NOT NULL,
+  TaskTypeID INT NOT NULL,
+  AddText VARCHAR(50) NULL,
+  Level1 INT NOT NULL,
+  Level2 INT NULL,
+  Level3 INT NULL,
+  Level4 INT NULL,
+  Level5 INT NULL,
+  PointsPossible INT NOT NULL
+);
+
+--- Create Notes Table ---
+DROP TABLE IF EXISTS Notes;
+CREATE TABLE Notes (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  PokemonID INT NULL,
+  TaskID INT NULL,
+  NoteBody VARCHAR(256)
+);
